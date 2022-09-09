@@ -2,30 +2,32 @@
 
 <div>
   <label>Enter Password Length: </label>
-  <input />
+  <input (input)="onChangeLength($any($event.target).value)"/>
 </div>
 
 
 <div>
-  <input type="checkbox" />
+  <input (change)="onChangeUseLetters()" type="checkbox" />
   <label>Use Letters</label>
 </div>
 
 <div>
-  <input type="checkbox" />
+  <input (change)="onChangeUseNumbers()" type="checkbox" />
   <label>Use Numbers</label>
 </div>
 
 <div>
-  <input type="checkbox" />
+  <input (change)="onChangeUseSymbols()" type="checkbox" />
   <label>Use Symbols</label>
 </div>
 
 <div>
-  <button>Generate!</button>
+  <button (click)="onButtonClick()">Generate!</button>
 </div>
 
 <div>
   <label>Your Password: </label>
-  <input />
+  <input [value]="password"/>
 </div>
+
+{{ password }}
